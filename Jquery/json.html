@@ -1,0 +1,50 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+		
+	</head>
+	
+	
+	<body>
+
+        
+        <script>
+
+          var ade = {name:"Gbenga" , age: 30 , dateme: new Date()};
+            
+            var shade = JSON.stringify(ade,null,1);  //This converts the javascript objext into a json file by stringifying
+            
+            alert(shade)
+            
+            var joe = JSON.parse(shade,function(key,value){ //converts the json file back to a javascript object
+                if(key == "dateme"){
+                    return new Date();
+                }
+                
+                else{
+                return value;
+                }
+            })
+            
+            alert(joe.dateme.toGMTString()); 
+            
+            
+            var text = '{"name":[{"person1": "tobi"}]}' // creating a json file literally
+            
+            var oga = JSON.parse(text); // converting it to a javascript object
+            
+            alert(oga["name"][0]["person1"]); // alerting tobi
+        </script>
+
+	</body>
+	
+	
+	</html>
+	
+	

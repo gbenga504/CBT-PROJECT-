@@ -1,0 +1,50 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	</head>
+	
+	
+	<body>
+        
+        
+        <script type="text/javascript">
+            
+            var xmlhttp = new XMLHttpRequest(); // making a new XML request
+            var url = "jsontxt.json"; // pointing out the url to the json file 
+            
+            xmlhttp.onreadystatechange = function(){
+                if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    var arr = JSON.parse(xmlhttp.responseText);
+                    myarray(arr);
+                }
+            }
+            
+            xmlhttp.open("GET", url, true); //preparing request
+            xmlhttp.send( ); // sending the request 
+            
+            
+            function myarray(n){
+               var show = "";
+               for (var i=0 ; i < n.length ; i++){
+                   show += "<a href="+ n[i].url + ">" + n[i].display + "</a><br>" ; //using a loop to display answer 
+                    
+               } 
+                
+                document.write(show);
+            } 
+                        
+            
+        </script>
+
+	</body>
+	
+	
+	</html>
+	
+	

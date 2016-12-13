@@ -1,0 +1,85 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	</head>
+	
+	
+	<body>
+        <div id="header">
+            <p> NAME: </p>
+            <p> SCHOOL: </p>
+            <p> AGE: </p>
+            <p> ADDRESS: </p>
+            <p> FELLOWSHIP: </p>
+        </div>
+        
+        <script>
+            /* working with ajax and json and text files */
+            
+            var xmlhttp, /* declaring global variables */
+                listen = document.getElementById("header");
+            
+            
+            function loader(url,func){  /* this function takes care of cross browser platforms of ajax */
+                if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                    
+                }
+                
+                else{
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHttp");
+                } //setting the request for different platforms 
+                
+                xmlhttp.onreadystatechange = func; //setting the onreadystatechange of the browser 
+                
+                xmlhttp.open("Get",url,true); //used to prepare the file for thje browsre to display 
+                xmlhttp.send(); // sends the request to the browser 
+            }
+            
+            
+            
+            function display(e){ //this function handles the click event of the parent node  
+                var arr = [];  //create an empty array to store the <p>s
+                
+                for(var j=0; j<5 ; j++ ){
+                    arr.push(listen.getElementsByTagName("p")[j].innerHTML);
+                }
+                
+                var elem = e.target.innerHTML; //setting the innerHTML of then targeted element
+                
+                return loader("jsontxt.json", function(){ // calling function loader 
+                   if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        var ade = JSON.parse(xmlhttp.responseText); //converting the responseText to a javascript Object syntax
+                        for (var i=0; i < ade.length; i++){
+                            
+                            if(arr.indexOf(elem) == i){     //compare arr with elem.innerHTML;
+                                if(elem.indexOf(ade[i]["display"]) != -1){
+                                    break; //break if the innerHTML has been updated 
+                                }
+                                
+                                e.target.innerHTML += ade[i]["display"]; //display if it hasnt
+                                break;
+                            }
+                            
+                        }
+                   }
+                })
+                
+            }
+            
+            listen.addEventListener("click",display); //setting the event listener click for the element
+            
+            
+        </script>
+	</body>
+	
+	
+	</html>
+	
+	

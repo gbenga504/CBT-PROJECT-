@@ -1,0 +1,80 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	</head>
+	
+	
+	<body>
+        <!-- prototype is accessible to everyone and they all share the same properties -->
+        
+        <script type="text/javascript">
+                var message = prompt("Enter your a sentence: "), // enter the sentence containing the word to count 
+                storeMessageArray = [], // collects and store the message as an array
+                compareArray = [], // array comapares itself with the storeMessageArray
+                finalArrayOfAlpha = [], // array stores the final collection of alphabets
+                collectEachAlpha = []; // array collects each aplhabets to check if they already exit 
+            
+            
+                /*this converts the message to an array and pushes it into storeMessageArray */
+
+                for(var j=0; j< message.length ; j++){
+                    
+                    if (message.substring(j,j+1) == " "){
+                        continue;
+                    } //this checks if the message contains a space, then it skips any space if found
+
+                    storeMessageArray.push(message.substring(j,j+1)) ;
+                }
+                
+                /* end of converts */
+
+
+                compareArray = storeMessageArray; // passes storeMessageArray into compareArray for comparison
+            
+                
+                
+                // creates a loop to execute all operation 
+                for(var i=0; i <storeMessageArray.length ; i++){
+
+
+
+                    if (collectEachAlpha.indexOf(storeMessageArray[i]) != -1){
+                        continue;
+                    } //checks collectEachAlpha for the alphabet, if it exists if jumps the loop and proceeds forward 
+
+
+                    collectEachAlpha.push(storeMessageArray[i]); //pusshing each storeMessageArray into collectEachAlpha
+
+
+
+                    for(var j=0; j < compareArray.length ; j++){
+                        if(storeMessageArray[i] == compareArray[j] ){
+                          finalArrayOfAlpha.push(compareArray[j]);
+
+
+                        }
+                    } //creates a loop, that checks each alphabet with an array(compareArray), then pushes similar alphabet into                                       //finalArrayOfAlpha
+
+                    alert(storeMessageArray[i] + "=" + finalArrayOfAlpha.length); //alert each answer
+
+                    finalArrayOfAlpha.length = 0;  //empty finalArrayOfAlpha so another variable can take the position
+
+
+                }
+                
+                // end of loop
+            
+        </script>
+
+	</body>
+	
+	
+	</html>
+	
+	

@@ -1,0 +1,78 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+		
+	</head>
+	
+	
+	<body>
+        <script type="text/javascript">
+            var arr = [],
+                alpha = [],
+                beta = [],
+                teta = [],
+                totalalpha,
+                newalpha = [];
+            
+            function matr(){
+                
+                for(var i=0 ; i <9 ; i++){
+                    arr[i] = prompt("Enter the number");
+                } // general array
+            
+                for(var a=0 ; a <9 ; a++){
+                        if(arr.indexOf(arr[a]) == 2 || arr.indexOf(arr[a]) >= 5){
+                             continue;
+                        }
+                     alpha.push(parseInt(arr[a]));
+                    
+                    /*totalalpha = parseInt((alpha[0] * alpha[3] -  alpha[1] * alpha[2]))
+                    
+                    newalpha.push(parseInt(alpha)*totalalpha); */
+                } // for alpha
+                
+                
+                 /*for(var b=0 ; b <9 ; b++){
+                        if(arr.indexOf(arr[b]) == 2 || arr.indexOf(arr[b]) == 5){
+                             alpha.push(arr[i]);
+                        }
+                        
+                     else{
+                        continue;
+                     }
+                    
+                } // for beta  
+                
+                for(var c=0 ; c <9 ; c++){
+                        if(arr.indexOf(arr[b]) == 6 || arr.indexOf(arr[b]) == 7){
+                             alpha.push(arr[i]);
+                        }
+                        
+                     else{
+                        continue;
+                     }
+                    
+                } // for beta 
+                
+                teta.push(arr[8]); */
+
+                alert(alpha);
+                
+                
+            }
+            
+            matr();
+        </script>
+
+	</body>
+	
+	
+	</html>
+	
+	

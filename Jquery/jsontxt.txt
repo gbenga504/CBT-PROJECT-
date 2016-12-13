@@ -1,0 +1,5 @@
+[
+{"name":"Gbenga", school:"futa"},
+{"name": "Toyin", "school":"UNILAG"}, 
+{"name": "Tobi", "school": "Eksu"}
+]

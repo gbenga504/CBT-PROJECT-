@@ -1,0 +1,38 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+		
+	</head>
+	
+	
+	<body>
+        <div id="box" style="background-color: red; width: 100px ; height: 100px;"></div>
+        
+        <button> click me </button>
+        <script>
+            $("button").click(function(){
+                $("div#box").animate({
+                height: "200px",
+                width: "200px"
+            }, 3000);
+                
+                $("div#box").animate({
+                    height: "100px",
+                    width: "100px"
+                
+                }, 3000);
+            })
+        </script>
+
+	</body>
+	
+	
+</html>
+	
+	

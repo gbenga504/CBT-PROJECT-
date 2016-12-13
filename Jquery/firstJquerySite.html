@@ -1,0 +1,45 @@
+<!Doctype html>
+
+	<html>
+	
+	
+	<head>
+		<title> </title>
+		
+		<script type="text/javascript" src="jquery-2.1.4.js"></script>
+		
+		<script type="text/javascript">
+		 $(document).ready(function(){
+			$("a").on({click: function(){
+				 $(this).html("MY NAME IS GAD"); } ,
+				 mouseenter: function(){
+					 $(this).attr("style" , "color:red");
+				 } ,
+
+				  mouseleave: function(){
+					alert("bye for now ");
+				 }
+			
+			//map acts one every element in an array and performs  some thing on them
+            //every returns  true if the condition for every element in an array is true, while some check if and returns true or false
+            //forEach stands alone without been appendeed to any value
+            
+			})
+		 }) 
+
+		</script>
+		
+	</head>
+	
+	
+	<body>
+			<a id="hone">
+			click me 
+			</a>
+
+	</body>
+	
+	
+	</html>
+	
+	
